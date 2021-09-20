@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_mainactivity_appname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,6 +27,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_mainactivity_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
@@ -34,17 +36,19 @@
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_mainactivity_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:inputType="textPassword"
             android:hint="Mật khẩu"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:textSize="20sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_mainactivity_signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -58,19 +62,23 @@
         android:textSize="25sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clicktext_mainactivity_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="130dp"
+        android:clickable="true"
         android:text="Đăng ký Facebook"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clicktext_mainactivity_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
+        android:clickable="true"
         android:text="Cần trợ giúp?"
         android:textColor="@color/white"
         android:textSize="18sp" />
