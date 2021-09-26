@@ -8,78 +8,102 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textview_mainactivity_appname"
+        android:id="@+id/textview_mainactivity_activityname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
         android:fontFamily="@font/klavika_bold"
-        android:text="facebook"
+        android:text="Hãy điền thông tin vào nhé"
         android:textColor="@color/white"
-        android:textSize="60sp" />
+        android:textSize="30sp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="15dp"
         android:background="@drawable/round_conner_background"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edittext_mainactivity_email"
+            android:id="@+id/edittext_mainactivity_firstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="Email hoặc số điện thoại"
+            android:hint="Tên"
             android:padding="15dp"
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edittext_mainactivity_password"
+            android:id="@+id/edittext_mainactivity_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword"
+            android:hint="Họ Đệm"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_mainactivity_birthyear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Năm sinh"
+            android:inputType="number"
             android:padding="15dp"
             android:textSize="20sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_mainactivity_signin"
+        android:id="@+id/button_mainactivity_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/round_conner_background"
         android:backgroundTint="#9E4267B2"
         android:fontFamily="@font/arial"
         android:padding="15dp"
-        android:text="Đăng nhập"
+        android:text="Xác nhận"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="25sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/clicktext_mainactivity_signup"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_mainactivity_fullname"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="130dp"
-        android:clickable="true"
-        android:text="Đăng ký Facebook"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:fontFamily="@font/klavika_bold"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="30sp"
+        android:visibility="invisible" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/clicktext_mainactivity_help"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_mainactivity_age"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="35dp"
-        android:clickable="true"
-        android:text="Cần trợ giúp?"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:fontFamily="@font/klavika_bold"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="30sp"
+        android:visibility="invisible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_mainactivity_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:fontFamily="@font/klavika_bold"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="30sp"
+        android:visibility="invisible" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

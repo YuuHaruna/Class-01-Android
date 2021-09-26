@@ -2,39 +2,54 @@ package com.example.class01android
 
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val signinButton: Button = findViewById(R.id.button_mainactivity_signin)
-        val emailEditText: EditText = findViewById(R.id.edittext_mainactivity_email)
-        val emailInput = emailEditText.text
-        val passwordEditText: EditText = findViewById(R.id.edittext_mainactivity_password)
-        val passwordInput = passwordEditText.text
-        val appName: TextView = findViewById(R.id.textview_mainactivity_appname)
-        signinButton.setOnClickListener {
-            appName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40f)
-            appName.text = when {
-                emailInput.isNotEmpty() && passwordInput.isNotEmpty() -> "Đăng nhập thành công"
-                emailInput.isEmpty() && passwordInput.isEmpty() -> "Chưa nhập gì cả"
-                else -> "Nhập thiếu gòy"
+        val firstNameEditText: EditText = findViewById(R.id.edittext_mainactivity_firstname)
+        val firstName = firstNameEditText.text
+        val lastNameEditText: EditText = findViewById(R.id.edittext_mainactivity_lastname)
+        val lastName = lastNameEditText.text
+        val birthYearEditText: EditText = findViewById(R.id.edittext_mainactivity_birthyear)
+        val birthYear = birthYearEditText.text
+        val confirmButton: Button = findViewById(R.id.button_mainactivity_confirm)
+        confirmButton.setOnClickListener {
+            val activityNameText: TextView = findViewById(R.id.textview_mainactivity_activityname)
+            when {
+                firstName.isNotEmpty() && lastName.isNotEmpty() && birthYear.isNotEmpty() -> {
+                    activityNameText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23f)
+                    activityNameText.text = "Chúc mừng bạn đã lộ thông tin cá nhân"
+                    firstNameEditText.visibility = View.GONE
+                    lastNameEditText.visibility = View.GONE
+                    birthYearEditText.visibility = View.GONE
+                    confirmButton.visibility = View.GONE
+                    val person = Person(firstName.toString(),
+                        lastName.toString(),
+                        birthYear.toString().toInt())
+                    val fullName: TextView = findViewById(R.id.textview_mainactivity_fullname)
+                    fullName.text = person.fullName
+                    fullName.visibility = View.VISIBLE
+                    val age: TextView = findViewById(R.id.textview_mainactivity_age)
+                    age.text = person.age.toString()
+                    age.visibility = View.VISIBLE
+                    val job: TextView = findViewById(R.id.textview_mainactivity_job)
+                    job.text = when {
+                        person.age < 18 -> "Học sinh"
+                        person.age > 25 -> "Đi làm"
+                        else -> "Sinh viên"
+                    }
+                    job.visibility = View.VISIBLE
+                }
+                firstName.isEmpty() && lastName.isEmpty() && birthYear.isEmpty() -> activityNameText.text =
+                    "Chưa nhập gì cả"
+                else -> activityNameText.text = "Nhập thiếu gòy"
             }
-        }
-        val signupButton: TextView = findViewById(R.id.clicktext_mainactivity_signup)
-        signupButton.setOnClickListener {
-            Toast.makeText(this, "Tìm Fb thật mà đăng ký, tôi là pha ke", Toast.LENGTH_LONG).show()
-        }
-        val helpButton: TextView = findViewById(R.id.clicktext_mainactivity_help)
-        helpButton.setOnClickListener {
-            Toast.makeText(this,
-                "Tôi cũng cần trợ giúp chứ không phải mỗi bạn :)",
-                Toast.LENGTH_LONG).show()
         }
     }
 }
